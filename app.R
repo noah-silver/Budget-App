@@ -1,8 +1,7 @@
 
-
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Define UI for application that plots net worth over time given a budget
 ui <- fluidPage(
     titlePanel("Budget"),
     sidebarLayout(
@@ -108,7 +107,7 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required to plot budget
 server <- function(input, output) {
 library(budgetr)
     output$plot <- renderPlot({
