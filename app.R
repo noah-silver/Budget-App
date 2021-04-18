@@ -27,7 +27,8 @@ ui <- fluidPage(
                       format = "yyyy-mm-dd"),
         textInput(inputId = "payrecur",
                       label = "Recurring",
-                      value = "monthly"),    
+                      value = "monthly"),   
+        textOutput("text1"),
         sliderInput(inputId = "rent",
                     label = "Rent",
                     min = 0,
@@ -121,6 +122,10 @@ library(budgetr)
                             start = input$startdate,
                             end = input$enddate,
                             initial = input$initial))
+    })
+    output$text1 <- renderText({
+        "'Recurring' options include 'daily', 'weekly', 'monthly', 'yearly', or 
+        'X days', 'X weeks', 'X months', 'X years'"
     })
   
 }
